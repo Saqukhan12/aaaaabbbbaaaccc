@@ -1,0 +1,97 @@
+﻿@model IEnumerable<DotNetCoreBoilerplate.Models.CustomerContact>
+
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>List</h4>
+<hr />
+<div>
+    
+</div>
+<div class="d-flex justify-content-end" data-kt-docs-table-toolbar="base">
+    
+    <a onclick="OpenCustomerContactModal()" id="customer-contact" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_generic">
+        <i class="ki-duotone ki-plus fs-2"></i>
+        New Customer Contact
+    </a>
+</div>
+
+<div>
+    <div class="table-responsive">
+        <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_datatable_customers">
+            <thead>
+                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                    <th class="min-w-50px sorting" tabindex="0" aria-controls="kt_ecommerce_products_table" rowspan="1" colspan="1" aria-label="Product: activate to sort column ascending" style="width: 30.328px;">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+
+                    <th class="text-end min-w-50px sorting" tabindex="0" aria-controls="kt_ecommerce_products_table" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 30.547px;">
+                        @Html.DisplayNameFor(model => model.Description)
+
+                    </th>
+
+                    <th class="text-end min-w-100px sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 100.625px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="fw-semibold text-gray-600">
+                @foreach (var item in Model)
+                {
+                    <tr class="odd">
+                        <td>
+                            <div class="d-flex align-items-center">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </div>
+                        </td>
+                        <td class="text-end pe-0" data-order="23">
+                            <span class="fw-bold ms-3">
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </span>
+                        </td>
+                        <td class="text-end">
+                            <button class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_update_permission">
+                                <i class="ki-duotone ki-setting-3 fs-3">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                    <span class="path5"></span>
+                                </i>
+                            </button>
+                            <button class="btn btn-icon btn-active-light-primary w-30px h-30px text-danger" data-kt-permissions-table-filter="delete_row">
+                                <i class="ki-duotone ki-trash fs-3">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                    <span class="path5"></span>
+                                </i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    function OpenCustomerContactModal() {
+        debugger;
+        $.ajax({
+            type: 'GET',
+            url: "/CustomerContacts/Create",
+            success: function (data) {
+                debugger;
+                if (data != null) {
+                    // Inject the loaded content into the tab 2 pane
+                    $("#kt_tab_2").html(`<span>Contacts</span>`);
+                    $("#kt_tab_pane_2").empty();
+                    $("#kt_tab_pane_2").html(data);
+
+                    // Open the existing modal
+                    $("#kt_modal_generic").modal();
+                }
+            }
+        });
+    }
+</script>

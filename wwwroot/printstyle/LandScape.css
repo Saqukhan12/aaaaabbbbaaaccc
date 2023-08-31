@@ -1,0 +1,61 @@
+﻿@page {
+    size: A4 landscape;
+}
+table {
+    background-color: white;
+    font-size:12pt;
+}
+
+.cont {
+    width: 150px;
+    background-color: gray;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+}
+
+.boder2px {
+    border: 2px solid black;
+}
+
+    .boder2px td {
+        border: 1px solid black;
+    }
+
+    .boder2px tr {
+        border: 1px solid black;
+    }
+
+    .boder2px th {
+        border: 1px solid black;
+    }
+.boder1px {
+    border: 1px solid black;
+}
+.boder1pxgrey {
+    border: 1px solid grey;
+}
+
+h3 {
+    text-align: center;
+}
+
+tr {
+    line-height: .93;
+}
+
+img {
+    float: right;
+}
+
+b {
+    line-height: .9;
+}
+
+@media
+print{
+    .row
+    {
+        page-break-inside:avoid;
+    }
+}

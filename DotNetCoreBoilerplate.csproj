@@ -1,0 +1,39 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <AssemblyName>TBSISSU3</AssemblyName>
+    <UserSecretsId>c1178ce6-478a-4681-b018-c5ba82f51152</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Common\**" />
+    <Compile Remove="Views\Common\**" />
+    <Content Remove="Models\Common\**" />
+    <Content Remove="Views\Common\**" />
+    <EmbeddedResource Remove="Models\Common\**" />
+    <EmbeddedResource Remove="Views\Common\**" />
+    <None Remove="Models\Common\**" />
+    <None Remove="Views\Common\**" />
+  </ItemGroup>
+	
+  <ItemGroup>
+	  <PackageReference Include="Abp" Version="8.3.1" />
+	  <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.9" />
+	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.9" />
+	  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.9" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+
+	  <!--Development Files can be removed for deployment -->
+	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\baseFile\" />
+  </ItemGroup>
+</Project>

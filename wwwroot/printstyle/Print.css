@@ -1,0 +1,53 @@
+#content, #page {
+    width: 100%;
+    margin: 0;
+    float: none;
+}
+
+.hidden 
+{
+    display: none;
+}
+
+.vl {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    height: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+hr {
+    border-top: 2px solid black;
+}
+
+table tr th {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td {
+    border: 1px solid #171717;
+    padding: 8px;
+    text-wrap:normal;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    text-wrap: normal;
+}

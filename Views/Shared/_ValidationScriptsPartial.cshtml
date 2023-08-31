@@ -1,0 +1,104 @@
+<script src="~/assets/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/assets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<script src="~/assets/lib/jquery/jquery.maskedinput.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.add').on('click', function () {
+            var parentTableId = $(this).data("id");
+            var html = $('#' + parentTableId + ' tbody tr:first').html();
+            var tr = '<tr>' + html + '</tr>';
+            var res = tr.split("[0]").join("[" + ($('#' + parentTableId + ' > tbody > tr ').length) + "]");
+            var res1 = res.split("_0_").join("_" + ($('#' + parentTableId + ' > tbody > tr ').length) + "_");
+            var res2 = res1.split("(0)").join("(" + ($('#' + parentTableId + ' > tbody > tr ').length) + ")");
+            $('#' + parentTableId + ' tbody').append(res2);
+
+        });
+
+        $('.delete').on('click', function () {
+            var parentTableId = $(this).data("id");
+            if ($('#' + parentTableId + ' tr').length > 2) {
+                $('#' + parentTableId + ' tr:last').remove();
+            }
+        });
+    });
+</script>
+
+
+<!-- Delete Random Rows anywhere just add Button to delete only the rest is automatic-->
+<script>
+    //Delete Random Rows anywhere just add Button to delete only the rest is automatic
+    $(Document).ready(function () {
+        $(document).on('click', 'button.deletebtn', function () {
+            var parentTableId = $(this).data("id");
+            var TableRow = $('#' + parentTableId + ' tbody tr:last').index();
+            if (TableRow != 0) {
+                $(this).closest('tr').remove();
+            }
+            else {
+                alert("One row of the table is mandatory.");
+            }
+            c = 0;
+            $('#' + parentTableId + ' tbody tr').each(function () {
+                $('td', this).each(function () {
+                    var NameValue = $(this).closest("td").find(":input").attr("name");
+                    if (NameValue.match(/[0-9]/g).length == 1) {
+                        $('input[name$="' + NameValue + '"]').attr("name", NameValue.replace(/[0-9]/, c));
+                        $('select[name$="' + NameValue + '"]').attr("name", NameValue.replace(/[0-9]/, c));
+                        $(this).find("span").attr("data-valmsg-for", NameValue.replace(/[0-9]/, c));
+                    }
+                    if (NameValue.match(/[0-9]/g).length == 2) {
+                        $('input[name$="' + NameValue + '"]').attr("name", NameValue.replace(/[0-9][0-9]/, c));
+                        $('select[name$="' + NameValue + '"]').attr("name", NameValue.replace(/[0-9][0-9]/, c));
+                        $(this).find("span").attr("data-valmsg-for", NameValue.replace(/[0-9][0-9]/, c));
+                    }
+                    else if (NameValue.match(/[0-9]/g).length == 3) {
+                        $('input[name$="' + NameValue + '"]').attr("name", NameValue.replace(/[0-9][0-9][0-9]/, c));
+                        $('select[name$="' + NameValue + '"]').attr("name", NameValue.replace(/[0-9][0-9][0-9]/, c));
+                        $(this).find("span").attr("data-valmsg-for", NameValue.replace(/[0-9][0-9][0-9]/, c));
+                    }
+                });
+                c++;
+            });
+            alert("Record Deleted!");
+        });
+    });
+
+    $(document).on('click', 'button.deletebtnedit', function () {
+        var parentTableId = $(this).data("id");
+        var TableRow = $('#' + parentTableId + ' tbody tr:last').index();
+        if (TableRow != 0) {
+            $(this).closest('tr').remove();
+        }
+        else {
+            alert("One row of the table is mandatory.");
+        }
+    });
+
+    $(document).ready(function () {
+        $("input").attr("autocomplete", "off");
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('.Phone').mask("9999-9999999");
+    });
+</script>
+>
+
+<!--for Disabling the button add (name="myButton" onclick="resetForm(this.form);") button  and add( onsubmit="checkForm(this);" ) To form Tag -->
+<script type="text/javascript">
+
+    function checkForm(form) // Submit button clicked
+    {
+        form.myButton.disabled = true;
+        return true;
+    }
+
+    function resetForm(form) {
+        setTimeout(function () {
+            form.myButton.disabled = false;
+        }, 5000);
+    }
+</script>

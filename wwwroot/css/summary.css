@@ -1,0 +1,28 @@
+﻿@page {
+    size: A4 landscape;
+    margin: 20px 10px !important;
+    padding: 0px !important;
+
+}
+
+.thGTotal {
+    color: darkred;
+    font-weight: bold;
+    border: 1px solid #000000 !important;
+}
+
+.thTotal {
+    color: red;
+    font-weight: bold;
+    border: 1px solid #000000 !important;
+}
+
+table tr td, th{
+    border:1px solid #000000 !important;
+}
+
+
+.anchorColor {
+    color:black !important;
+    text-decoration:none !important;
+}
