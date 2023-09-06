@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DotNetCoreBoilerplate.Models.CustomerContact>
+
+<div class="table-responsive" id="contactsIndex">
+    <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_datatable_customers">
+        <thead>
+            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                <th class="min-w-50px sorting" tabindex="0" aria-controls="kt_ecommerce_products_table" rowspan="1" colspan="1" aria-label="Product: activate to sort column ascending" style="width: 30.328px;">
+                    Name
+                </th>
+
+                <th class="text-end min-w-50px sorting" tabindex="0" aria-controls="kt_ecommerce_products_table" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 30.547px;">
+                    Description
+                </th>
+
+            </tr>
+        </thead>
+        <tbody class="fw-semibold text-gray-600">
+            @foreach (var item in Model)
+            {
+                <tr class="odd">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </div>
+                    </td>
+                    <td class="text-end pe-0" data-order="23">
+                        <span class="fw-bold ms-3">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

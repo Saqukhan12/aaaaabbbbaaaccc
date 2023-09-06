@@ -66,7 +66,7 @@ namespace DotNetCoreBoilerplate.Controllers.CustomerContacts
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id", customerContact.CustomerId);
-            return PartialView(customerContact);
+            return PartialView("_Index",customerContact);
         }
 
         // GET: CustomerContacts/Edit/5

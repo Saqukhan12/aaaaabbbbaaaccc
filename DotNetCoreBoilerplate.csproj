@@ -5,6 +5,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <AssemblyName>TBSISSU3</AssemblyName>
     <UserSecretsId>c1178ce6-478a-4681-b018-c5ba82f51152</UserSecretsId>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
   </PropertyGroup>
 
   <ItemGroup>

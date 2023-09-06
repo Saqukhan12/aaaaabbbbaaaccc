@@ -11,7 +11,7 @@
 </div>
 <div class="d-flex justify-content-end" data-kt-docs-table-toolbar="base">
     
-    <a onclick="OpenCustomerContactModal()" id="customer-contact" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_generic">
+    <a onclick="OpenCustomerContactModal()" id="customer-contact" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_generic_2">
         <i class="ki-duotone ki-plus fs-2"></i>
         New Customer Contact
     </a>
@@ -76,6 +76,8 @@
 </div>
 <script>
     function OpenCustomerContactModal() {
+        const myModal1 = new bootstrap.Modal('#kt_modal_generic_2');
+        console.log(myModal1)
         debugger;
         $.ajax({
             type: 'GET',
@@ -84,12 +86,15 @@
                 debugger;
                 if (data != null) {
                     // Inject the loaded content into the tab 2 pane
-                    $("#kt_tab_2").html(`<span>Contacts</span>`);
-                    $("#kt_tab_pane_2").empty();
-                    $("#kt_tab_pane_2").html(data);
+                    $("#kt_tab_generic1").html(`<span>Contacts</span>`);
+                    $("#kt_tab_pane_generic_1").empty();
+                    $("#kt_tab_pane_generic_1").html(data);
 
                     // Open the existing modal
-                    $("#kt_modal_generic").modal();
+                    $("#kt_modal_generic_2").modal();
+                    $("#kt_tab_generic2").hide();
+                    $("#kt_modal_generic_header_2").html(`<h4>New Customer Contact</h4>`);
+
                 }
             }
         });

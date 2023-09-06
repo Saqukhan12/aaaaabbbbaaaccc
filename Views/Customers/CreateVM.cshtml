@@ -1,0 +1,133 @@
+﻿@model DotNetCoreBoilerplate.ViewModel.CustomerVM.CustomerContactsViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">General</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Contacts</button>
+        </li>
+        @* <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+        </li> *@
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <form asp-action="Create" id="kt_modal_add_customer_form" method="post" class="form fv-plugins-bootstrap5 fv-plugins-framework">
+                <div class="heading text-yellow ">
+                    Customer Info
+                    <hr />
+                    <div class="custom-style-area" style="margin-left: 2rem !important;">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.Name" class=" required fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.Name" required id="Name" class="form-control form-control-solid">
+                            <span asp-validation-for="Customer.Name" class="text-danger"></span>
+                            @*<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>*@
+                        </div>
+
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.Email" class=" fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.Email" class="form-control form-control-solid">
+                            @*<span asp-validation-for="Description" class="text-danger"></span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="address ">
+                    Address
+                    <hr />
+                    <div class="custom-style-area" style="margin-left: 2rem !important;">
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.Street" class=" fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.Street" class="form-control form-control-solid">
+                            @*<span asp-validation-for="Street" class="text-danger"></span>*@
+                        </div>
+
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.City" class=" fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.City" class="form-control form-control-solid">
+                            @*<span asp-validation-for="City" class="text-danger"></span>*@
+                        </div>
+
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.State" class=" fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.State" class="form-control form-control-solid">
+                            @*<span asp-validation-for="State" class="text-danger"></span>*@
+                        </div>
+
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.ZipCode" class=" fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.ZipCode" class="form-control form-control-solid">
+                            @*<span asp-validation-for="ZipCode" class="text-danger"></span>*@
+                        </div>
+
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.Phone" class=" fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.Phone" class="form-control form-control-solid">
+                            @*<span asp-validation-for="Phone" class="text-danger"></span>*@
+                        </div>
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.InsertDate" class=" fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.InsertDate" class="form-control form-control-solid">
+                            @*<span asp-validation-for="InsertDate" class="text-danger"></span>*@
+                        </div>
+
+                        @* <div class="fv-row mb-3 fv-plugins-icon-container">
+                        <label asp-for="InsertUserId" class=" fs-6 fw-semibold mb-2"></label>
+                        <input asp-for="InsertUserId" class="form-control form-control-solid">
+                        <span asp-validation-for="InsertUserId" class="text-danger"></span>
+                        </div>*@
+
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                            <label asp-for="Customer.UpdateDate" class=" fs-6 fw-semibold mb-2"></label>
+                            <input asp-for="Customer.UpdateDate" class="form-control form-control-solid">
+                            <span asp-validation-for="Customer.UpdateDate" class="text-danger"></span>
+                        </div>
+
+                        @* <div class="fv-row mb-3 fv-plugins-icon-container">
+                        <label asp-for="UpdateUserId" class=" fs-6 fw-semibold mb-2"></label>
+                        <input asp-for="UpdateUserId" class="form-control form-control-solid">
+                        <span asp-validation-for="UpdateUserId" class="text-danger"></span>
+                        </div>
+
+                        <div class="fv-row mb-3 fv-plugins-icon-container">
+                        <label asp-for="TenantId" class=" fs-6 fw-semibold mb-2"></label>
+                        <input asp-for="TenantId" class="form-control form-control-solid">
+                        <span asp-validation-for="TenantId" class="text-danger"></span>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="form-group modal-footer flex-center">
+                    <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">
+                        <span class="indicator-label">Submit</span>
+                        <span class="indicator-progress">
+                            Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                        </span>
+                    </button>
+                    <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">
+                        <a asp-action="Index">Back to List</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+    </div>
+    
+</div>
+
+@* <script src="~/metheme/src/js/custom/apps/customers/add.js"></script> *@
+
+@*@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}*@

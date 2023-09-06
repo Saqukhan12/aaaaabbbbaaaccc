@@ -4,94 +4,97 @@
     ViewData["Title"] = "Create";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Create</h1>
-
-<h4>CustomerContact</h4>
-<hr />
 <div class="row">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+    <form asp-action="Create" id="kt_modal_add_customer_contact_form" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="fv-row mb-3 fv-plugins-icon-container">
                 <label asp-for="CustomerId" class="control-label"></label>
-                <select asp-for="CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+                <select asp-for="CustomerId" class="form-select form-select-transparent text-graY-800 fs-base lh-1 fw-bold py-0 ps-3 w-auto" data-control="select2" data-hide-search="true" data-dropdown-css-class="w-150px" data-placeholder="Select an option" asp-items="ViewBag.CustomerId"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" required class="form-control" />
 
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Street" class="control-label"></label>
-                <input asp-for="Street" class="form-control" />
-                <span asp-validation-for="Street" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ZipCode" class="control-label"></label>
-                <input asp-for="ZipCode" class="form-control" />
-                <span asp-validation-for="ZipCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="InsertDate" class="control-label"></label>
-                <input asp-for="InsertDate" class="form-control" />
-                <span asp-validation-for="InsertDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="InsertUserId" class="control-label"></label>
-                <input asp-for="InsertUserId" class="form-control" />
-                <span asp-validation-for="InsertUserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdateDate" class="control-label"></label>
-                <input asp-for="UpdateDate" class="form-control" />
-                <span asp-validation-for="UpdateDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdateUserId" class="control-label"></label>
-                <input asp-for="UpdateUserId" class="form-control" />
-                <span asp-validation-for="UpdateUserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TenantId" class="control-label"></label>
-                <input asp-for="TenantId" class="form-control" />
-                <span asp-validation-for="TenantId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="Street" class="control-label"></label>
+            <input asp-for="Street" class="form-control" />
+            <span asp-validation-for="Street" class="text-danger"></span>
+        </div>
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="City" class="control-label"></label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="State" class="control-label"></label>
+            <input asp-for="State" class="form-control" />
+            <span asp-validation-for="State" class="text-danger"></span>
+        </div>
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="ZipCode" class="control-label"></label>
+            <input asp-for="ZipCode" class="form-control" />
+            <span asp-validation-for="ZipCode" class="text-danger"></span>
+        </div>
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="Phone" class="control-label"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class ="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="InsertDate" class="control-label"></label>
+            <input asp-for="InsertDate" class="form-control" />
+            <span asp-validation-for="InsertDate" class="text-danger"></span>
+        </div>
+       @*  <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="InsertUserId" class="control-label"></label>
+            <input asp-for="InsertUserId" class="form-control" />
+            <span asp-validation-for="InsertUserId" class="text-danger"></span>
+        </div> *@
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="UpdateDate" class="control-label"></label>
+            <input asp-for="UpdateDate" class="form-control" />
+            <span asp-validation-for="UpdateDate" class="text-danger"></span>
+        </div>
+        @* <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="UpdateUserId" class="control-label"></label>
+            <input asp-for="UpdateUserId" class="form-control" />
+            <span asp-validation-for="UpdateUserId" class="text-danger"></span>
+        </div>
+        <div class="fv-row mb-3 fv-plugins-icon-container">
+            <label asp-for="TenantId" class="control-label"></label>
+            <input asp-for="TenantId" class="form-control" />
+            <span asp-validation-for="TenantId" class="text-danger"></span>
+        </div> *@
+        <div class="form-group modal-footer flex-center">
+            <button type="submit" id="kt_modal_add_customer_contact_submit" class="btn btn-primary">
+                <span class="indicator-label">Submit</span>
+                <span class="indicator-progress">
+                    Please wait...
+                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                </span>
+            </button>
+            <button type="reset" id="kt_modal_add_customer_contact_cancel" class="btn btn-light me-3">
+                <a asp-action="Index">Back to List</a>
+            </button>
+            
+        </div>
+    </form>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+@* <script src="~/metheme/src/js/custom/apps/customers/contactadd.js"></script> *@
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

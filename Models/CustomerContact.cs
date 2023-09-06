@@ -15,6 +15,7 @@ public partial class CustomerContact
     public int? CustomerId { get; set; }
 
     [StringLength(200)]
+    [Required] 
     public string Name { get; set; } = null!;
 
     [StringLength(1000)]

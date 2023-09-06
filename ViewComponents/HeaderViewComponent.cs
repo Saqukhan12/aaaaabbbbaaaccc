@@ -17,7 +17,7 @@
 
             if (HttpContext.Session.Keys.Count() < 1)
             {
-                _HTTPContextAccessor.HttpContext.Response.Redirect("../Identity/Login");
+                _HTTPContextAccessor.HttpContext.Response.Redirect("/Identity/Login");
             }
             return View();
         }

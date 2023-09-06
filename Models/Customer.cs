@@ -14,6 +14,7 @@ public partial class Customer
     public int Id { get; set; }
 
     [StringLength(200)]
+    [Required]
     public string Name { get; set; } = null!;
 
     [StringLength(1000)]

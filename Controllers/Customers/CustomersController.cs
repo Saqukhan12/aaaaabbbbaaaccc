@@ -46,9 +46,15 @@ namespace DotNetCoreBoilerplate.Controllers.Customers
         }
 
         // GET: Customers/Create
-        public IActionResult Create()
+        public IActionResult Create(string type)
+
         {
-            return PartialView();
+            if(type == "_partial")
+            {
+                return PartialView("CreateVM");
+
+            }
+            return View("CreateVM");
         }
 
         // POST: Customers/Create
@@ -56,10 +62,12 @@ namespace DotNetCoreBoilerplate.Controllers.Customers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Street,City,State,ZipCode,Phone,Email,InsertDate,InsertUserId,UpdateDate,UpdateUserId,TenantId")] Customer customer)
+        public async Task<IActionResult> Create(Customer customer, string type)
         {
+            
             if (ModelState.IsValid)
             {
+                
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));     
@@ -68,7 +76,7 @@ namespace DotNetCoreBoilerplate.Controllers.Customers
         }
 
         // GET: Customers/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id, string type)
         {
             if (id == null || _context.Customers == null)
             {
@@ -76,10 +84,14 @@ namespace DotNetCoreBoilerplate.Controllers.Customers
             }
 
             var customer = await _context.Customers.FindAsync(id);
-            if (customer == null)
+            if (customer != null)
             {
-                return NotFound();
+                if (type == "_partial")
+                {
+                    PartialView(customer);
+                }
             }
+
             return View(customer);
         }
 

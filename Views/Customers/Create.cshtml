@@ -5,22 +5,22 @@
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
-    <form asp-action="Create" id="createCustomer">
+    <form asp-action="Create" id="kt_modal_add_customer_form" method="post" class="form fv-plugins-bootstrap5 fv-plugins-framework">
         <div class="heading text-yellow ">
             Customer Info
             <hr />
             <div class="custom-style-area" style="margin-left: 2rem !important;">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="fv-row mb-3 fv-plugins-icon-container">
-                    <label asp-for="Name" class="required fs-6 fw-semibold mb-2"></label>
-                    <input asp-for="Name" class="required form-control form-control-solid">
+                    <label asp-for="Name" class=" required fs-6 fw-semibold mb-2"></label>
+                    <input asp-for="Name" required id="Name" class="form-control form-control-solid">
                     <span asp-validation-for="Name" class="text-danger"></span>
                     @*<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>*@
                 </div>
 
                 <div class="fv-row mb-3 fv-plugins-icon-container">
-                    <label asp-for="Description" class=" fs-6 fw-semibold mb-2"></label>
-                    <textarea asp-for="Description" class="form-control form-control-solid"></textarea>
+                    <label asp-for="Email" class=" fs-6 fw-semibold mb-2"></label>
+                    <input asp-for="Email" class="form-control form-control-solid">
                     @*<span asp-validation-for="Description" class="text-danger"></span>*@
                 </div>
             </div>
@@ -58,52 +58,56 @@
                     <input asp-for="Phone" class="form-control form-control-solid">
                     @*<span asp-validation-for="Phone" class="text-danger"></span>*@
                 </div>
-
-                <div class="fv-row mb-3 fv-plugins-icon-container">
-                    <label asp-for="Email" class=" fs-6 fw-semibold mb-2"></label>
-                    <input asp-for="Email" class="form-control form-control-solid">
-                    @*<span asp-validation-for="Email" class="text-danger"></span>*@
-                </div>
-
                 <div class="fv-row mb-3 fv-plugins-icon-container">
                     <label asp-for="InsertDate" class=" fs-6 fw-semibold mb-2"></label>
                     <input asp-for="InsertDate" class="form-control form-control-solid">
                     @*<span asp-validation-for="InsertDate" class="text-danger"></span>*@
                 </div>
 
-                <div class="fv-row mb-3 fv-plugins-icon-container">
-                    <label asp-for="InsertUserId" class=" fs-6 fw-semibold mb-2"></label>
-                    <input asp-for="InsertUserId" class="form-control form-control-solid">
-                    @*<span asp-validation-for="InsertUserId" class="text-danger"></span>*@
-                </div>
+                @* <div class="fv-row mb-3 fv-plugins-icon-container">
+                <label asp-for="InsertUserId" class=" fs-6 fw-semibold mb-2"></label>
+                <input asp-for="InsertUserId" class="form-control form-control-solid">
+                <span asp-validation-for="InsertUserId" class="text-danger"></span>
+                </div>*@
 
                 <div class="fv-row mb-3 fv-plugins-icon-container">
                     <label asp-for="UpdateDate" class=" fs-6 fw-semibold mb-2"></label>
                     <input asp-for="UpdateDate" class="form-control form-control-solid">
-                    @*<span asp-validation-for="UpdateDate" class="text-danger"></span>*@
+                    <span asp-validation-for="UpdateDate" class="text-danger"></span>
+                </div>
+
+                @* <div class="fv-row mb-3 fv-plugins-icon-container">
+                <label asp-for="UpdateUserId" class=" fs-6 fw-semibold mb-2"></label>
+                <input asp-for="UpdateUserId" class="form-control form-control-solid">
+                <span asp-validation-for="UpdateUserId" class="text-danger"></span>
                 </div>
 
                 <div class="fv-row mb-3 fv-plugins-icon-container">
-                    <label asp-for="UpdateUserId" class=" fs-6 fw-semibold mb-2"></label>
-                    <input asp-for="UpdateUserId" class="form-control form-control-solid">
-                    @*<span asp-validation-for="UpdateUserId" class="text-danger"></span>*@
-                </div>
-
-                <div class="fv-row mb-3 fv-plugins-icon-container">
-                    <label asp-for="TenantId" class=" fs-6 fw-semibold mb-2"></label>
-                    <input asp-for="TenantId" class="form-control form-control-solid">
-                    @*<span asp-validation-for="TenantId" class="text-danger"></span>*@
-                </div>
+                <label asp-for="TenantId" class=" fs-6 fw-semibold mb-2"></label>
+                <input asp-for="TenantId" class="form-control form-control-solid">
+                <span asp-validation-for="TenantId" class="text-danger"></span>
+                </div>*@
             </div>
         </div>
-        <div class="form-group">
-            <input type="submit" value="Submit" class="btn btn-primary" />
-            <a asp-action="Index">Back to List</a>
+        <div class="form-group modal-footer flex-center">
+            <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">
+                <span class="indicator-label">Submit</span>
+                <span class="indicator-progress">
+                    Please wait...
+                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                </span>
+            </button>
+            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">
+                <a  asp-action="Index">Back to List</a>
+            </button>
         </div>
     </form>
 </div>
-@section Scripts {
+
+@* <script src="~/metheme/src/js/custom/apps/customers/add.js"></script> *@
+
+@*@section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
+}*@

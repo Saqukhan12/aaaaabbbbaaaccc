@@ -100,8 +100,6 @@ var KTModalCustomersAdd = function () {
 						// Disable submit button whilst loading
 						submitButton.disabled = true;
 
-
-
 						setTimeout(function() {
 							submitButton.removeAttribute('data-kt-indicator');
 							
@@ -116,20 +114,12 @@ var KTModalCustomersAdd = function () {
 							}).then(function (result) {
 								if (result.isConfirmed) {
 									// Hide modal
-
-									var data = new FormData(form);
-									data = [...data.entries()]; // Log FormData content as an array
-									console.log(data);
-									submitButton.disabled = false;
-									
-
 									debugger;
 									modal.hide();
-									
-									console.log(modal);
-									// Enable submit button after loading
 
-									
+									// Enable submit button after loading
+									submitButton.disabled = false;
+
 									// Redirect to customers list page
 									//window.location = form.getAttribute("data-kt-redirect");
 								}
@@ -219,11 +209,11 @@ var KTModalCustomersAdd = function () {
         // Public functions
         init: function () {
             // Elements
-			modal = new bootstrap.Modal(document.querySelector('#kt_modal_generic'));
-			console.log(modal);
-            form = document.querySelector('#kt_modal_add_customer_form');
-            submitButton = form.querySelector('#kt_modal_add_customer_submit');
-            cancelButton = form.querySelector('#kt_modal_add_customer_cancel');
+			modal = new bootstrap.Modal(document.querySelector('#kt_modal_generic_2'));
+
+			form = document.querySelector('#kt_modal_add_customer_contact_form');
+			submitButton = form.querySelector('#kt_modal_add_customer_contact_submit');
+			cancelButton = form.querySelector('#kt_modal_add_customer_contact_cancel');
 			//closeButton = form.querySelector('#kt_modal_add_customer_close');
 
             handleForm();
