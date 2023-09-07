@@ -10,28 +10,32 @@ namespace DotNetCoreBoilerplate.Common.BaseEntity
     {
         public int Id { get; set; }
 
+        public int? TenantId { get; set; }
+        
         [MaxLength(256)]
         [DisplayName("User Stamp")]
         public string UserStamp { get; set; }
 
         [MaxLength(256)]
         [DisplayName("By")]
-        public string CreatedBy { get; set; }
+        public string InsertUserId { get; set; }
 
-        [DisplayName("Created Date")]
-        public DateTime? CreatedDate { get; set; }
+        [DisplayName("Insert Date")]
+        public DateTime? InsertDate { get; set; }
 
         [MaxLength(256)]
         [DisplayName("Update By")]
-        public string UpdatedBy { get; set; }
+        public string UpdateUserId { get; set; }
         [DisplayName("Update Date")]
-        public DateTime? UpdatedDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
 
         public bool? IsSoftDeleted { get; set; }
     }
 
     public class SelectListModel
     {
+        public int? TenantId { get; set; }
+
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
         [Required]
@@ -41,6 +45,8 @@ namespace DotNetCoreBoilerplate.Common.BaseEntity
 
     public class SelectListModelManualId
     {
+        public int? TenantId { get; set; }
+
         [HiddenInput(DisplayValue = false)]
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
@@ -51,6 +57,8 @@ namespace DotNetCoreBoilerplate.Common.BaseEntity
 
     public class BaseSelectList
     {
+        public int? TenantId { get; set; }
+
         public int Id { get; set; }
         [StringLength(200)]
         public string Name { get; set; }
@@ -59,6 +67,8 @@ namespace DotNetCoreBoilerplate.Common.BaseEntity
     //Guid and Bases select list 
     public class GUBaseSelectList
     {
+        public int? TenantId { get; set; }
+
         public string Id { get; set; }
         [StringLength(200)]
         public string Name { get; set; }

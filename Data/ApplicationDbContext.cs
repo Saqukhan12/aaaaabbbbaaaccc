@@ -138,19 +138,19 @@ namespace DotNetCoreBoilerplate.Data
                 {
                     if (entry.State == EntityState.Added)
                     {
-                        entry.Entity.CreatedBy = UserDetails.ApplicationUserId;
-                        entry.Entity.CreatedDate = DateTime.Now;
-                        entry.Entity.UpdatedBy = UserDetails.ApplicationUserId;
-                        entry.Entity.UpdatedDate = DateTime.Now;
+                        entry.Entity.InsertUserId = UserDetails.ApplicationUserId;
+                        entry.Entity.InsertDate = DateTime.Now;
+                        entry.Entity.UpdateUserId = UserDetails.ApplicationUserId;
+                        entry.Entity.UpdateDate = DateTime.Now;
                     }
                     else if (entry.State == EntityState.Modified)
                     {
                         var original = this.GenerateOriginalEntity<BaseEntity>(entry.GetDatabaseValues());
-                        entry.Entity.UpdatedBy = UserDetails.ApplicationUserId;
-                        entry.Entity.UpdatedDate = DateTime.Now;
+                        entry.Entity.UpdateUserId = UserDetails.ApplicationUserId;
+                        entry.Entity.UpdateDate = DateTime.Now;
 
-                        entry.Entity.CreatedDate = original.CreatedDate;
-                        entry.Entity.CreatedBy = original.CreatedBy;
+                        entry.Entity.InsertDate = original.InsertDate;
+                        entry.Entity.InsertUserId = original.InsertUserId;
                     }
                 }
             }
