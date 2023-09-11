@@ -8,7 +8,7 @@ namespace DotNetCoreBoilerplate.Models;
 
 [Table("PurchaseReturn")]
 [Index("Number", "TenantId", Name = "PurchaseReturnUniqueConstraint", IsUnique = true)]
-public partial class PurchaseReturn
+public partial class PurchaseReturn 
 {
     [Key]
     public int Id { get; set; }

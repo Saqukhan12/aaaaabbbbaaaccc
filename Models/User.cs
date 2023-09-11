@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DotNetCoreBoilerplate.Models;
 
 [Index("Email", Name = "IX_Users_Email", IsUnique = true)]
-public partial class User
+public partial class User 
 {
     [Key]
     public int UserId { get; set; }

@@ -135,3 +135,22 @@
     </div>
 </div>
 
+<script>
+    $.ajax({
+        type: 'GET',
+        url: "/Tenants/Create",
+        success: function (data) {
+            if (data != null) {
+                // $("#kt_tab_2").html(`<span>Contacts</span>`);
+                $("#kt_modal_generic_scroll").empty();
+                $("#kt_modal_generic_scroll").html(data);
+
+            }
+            $("#kt_modal_generic").modal();
+            //$("#kt_modal_generic_header").html(`<h4>New Customer Contact</h4>`);
+            //$("#kt_modal_add_customer").addClass("show");
+
+
+        }
+    });
+</script>

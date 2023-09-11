@@ -37,5 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\baseFile\" />
+    <Folder Include="wwwroot\metheme\custom\js\" />
+    <Folder Include="wwwroot\metheme\custom\media\" />
   </ItemGroup>
 </Project>

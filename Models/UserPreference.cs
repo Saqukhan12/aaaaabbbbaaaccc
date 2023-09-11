@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DotNetCoreBoilerplate.Models;
 
 [Index("UserId", "PreferenceType", "Name", Name = "IX_UserPref_UID_PrefType_Name", IsUnique = true)]
-public partial class UserPreference
+public partial class UserPreference 
 {
     [Key]
     public int UserPreferenceId { get; set; }

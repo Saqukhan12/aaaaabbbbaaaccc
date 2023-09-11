@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using DotNetCoreBoilerplate.Common.BaseEntity;
 using Microsoft.EntityFrameworkCore;
 
 namespace DotNetCoreBoilerplate.Models;
 
 [Table("BillDetail")]
-public partial class BillDetail
+public partial class BillDetail : BaseEntity
 {
     [Key]
     public int Id { get; set; }

@@ -8,7 +8,7 @@ namespace DotNetCoreBoilerplate.Models;
 
 [Index("RoleId", "UserId", Name = "IX_UserRoles_RoleId_UserId")]
 [Index("UserId", "RoleId", Name = "UQ_UserRoles_UserId_RoleId", IsUnique = true)]
-public partial class UserRole
+public partial class UserRole 
 {
     [Key]
     public long UserRoleId { get; set; }

@@ -8,7 +8,7 @@ namespace DotNetCoreBoilerplate.Models;
 
 [Keyless]
 [Table("VersionInfo")]
-public partial class VersionInfo
+public partial class VersionInfo 
 {
     public long Version { get; set; }
 

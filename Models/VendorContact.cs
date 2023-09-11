@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DotNetCoreBoilerplate.Models;
 
 [Table("VendorContact")]
-public partial class VendorContact
+public partial class VendorContact 
 {
     [Key]
     public int Id { get; set; }

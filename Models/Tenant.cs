@@ -8,7 +8,7 @@ namespace DotNetCoreBoilerplate.Models;
 
 [Table("Tenant")]
 [Index("TenantName", Name = "IX_Tenant_TenantName", IsUnique = true)]
-public partial class Tenant
+public partial class Tenant 
 {
     [Key]
     public int TenantId { get; set; }

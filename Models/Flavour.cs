@@ -8,7 +8,7 @@ namespace DotNetCoreBoilerplate.Models;
 
 [Table("Flavour")]
 [Index("Name", "TenantId", Name = "FlavourUniqueConstraint", IsUnique = true)]
-public partial class Flavour
+public partial class Flavour 
 {
     [Key]
     public int Id { get; set; }

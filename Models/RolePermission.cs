@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DotNetCoreBoilerplate.Models;
 
 [Index("RoleId", "PermissionKey", Name = "UQ_RolePerm_RoleId_PermKey", IsUnique = true)]
-public partial class RolePermission
+public partial class RolePermission 
 {
     [Key]
     public long RolePermissionId { get; set; }

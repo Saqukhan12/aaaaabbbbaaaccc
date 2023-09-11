@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DotNetCoreBoilerplate.Models;
 
-public partial class Role
+public partial class Role 
 {
     [Key]
     public int RoleId { get; set; }

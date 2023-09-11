@@ -46,7 +46,7 @@ namespace DotNetCoreBoilerplate.Controllers.Tenants
         // GET: Tenants/Create
         public IActionResult Create()
         {
-            return View();
+            return PartialView();
         }
 
         // POST: Tenants/Create
@@ -54,7 +54,7 @@ namespace DotNetCoreBoilerplate.Controllers.Tenants
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TenantId,TenantName,Description,Currency,Street,City,State,ZipCode,Phone,Email,ProductNumberPrefix,ProductNumberUseDate,ProductNumberLength,CustomerNumberPrefix,CustomerNumberUseDate,CustomerNumberLength,SalesNumberPrefix,SalesNumberUseDate,SalesNumberLength,InvoiceNumberPrefix,InvoiceNumberUseDate,InvoiceNumberLength,InvoicePaymentNumberPrefix,InvoicePaymentNumberUseDate,InvoicePaymentNumberLength,VendorNumberPrefix,VendorNumberUseDate,VendorNumberLength,PurchaseNumberPrefix,PurchaseNumberUseDate,PurchaseNumberLength,BillNumberPrefix,BillNumberUseDate,BillNumberLength,BillPaymentNumberPrefix,BillPaymentNumberUseDate,BillPaymentNumberLength,SalesDeliveryNumberPrefix,SalesDeliveryNumberUseDate,SalesDeliveryNumberLength,SalesReturnNumberPrefix,SalesReturnNumberUseDate,SalesReturnNumberLength,PurchaseReceiptNumberPrefix,PurchaseReceiptNumberUseDate,PurchaseReceiptNumberLength,PurchaseReturnNumberPrefix,PurchaseReturnNumberUseDate,PurchaseReturnNumberLength,PositiveAdjustmentNumberPrefix,PositiveAdjustmentNumberUseDate,PositiveAdjustmentNumberLength,NegativeAdjustmentNumberPrefix,NegativeAdjustmentNumberUseDate,NegativeAdjustmentNumberLength,TransferOrderNumberPrefix,TransferOrderNumberUseDate,TransferOrderNumberLength,MaximumUser,InsertDate,InsertUserId,UpdateDate,UpdateUserId")] Tenant tenant)
+        public async Task<IActionResult> Create(Tenant tenant, string type)
         {
             if (ModelState.IsValid)
             {

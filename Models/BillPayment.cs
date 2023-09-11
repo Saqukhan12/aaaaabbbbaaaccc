@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using DotNetCoreBoilerplate.Common.BaseEntity;
 using Microsoft.EntityFrameworkCore;
 
 namespace DotNetCoreBoilerplate.Models;
 
 [Table("BillPayment")]
 [Index("Number", "TenantId", Name = "BillPaymentUniqueConstraint", IsUnique = true)]
-public partial class BillPayment
+public partial class BillPayment : BaseEntity
 {
     [Key]
     public int Id { get; set; }

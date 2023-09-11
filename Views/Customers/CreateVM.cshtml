@@ -19,87 +19,78 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <form asp-action="Create" id="kt_modal_add_customer_form" method="post" class="form fv-plugins-bootstrap5 fv-plugins-framework">
-                <div class="heading text-yellow ">
-                    Customer Info
-                    <hr />
-                    <div class="custom-style-area" style="margin-left: 2rem !important;">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.Name" class=" required fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.Name" required id="Name" class="form-control form-control-solid">
-                            <span asp-validation-for="Customer.Name" class="text-danger"></span>
-                            @*<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>*@
+                <div class="category-links">
+                    <a class="category-link" tabindex="-1" href="#CustomerInfo">Customer Info</a>
+                    <span class="separator">|</span>
+                    <a class="category-link" tabindex="-1" href="#Address">Address</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="categories">
+                    <div class="category category-first">
+                        <div class="category-title">
+                            <a class="category-anchor" name="CustomerInfo" style="opacity: 1;">Customer Info</a>
                         </div>
+                        <div class="custom-style-area" style="margin-left: 2rem !important;">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.Name" class=" required fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.Name" required id="Name" class="form-control form-control-solid">
+                                <span asp-validation-for="Customer.Name" class="text-danger"></span>
+                                @*<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>*@
+                            </div>
 
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.Email" class=" fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.Email" class="form-control form-control-solid">
-                            @*<span asp-validation-for="Description" class="text-danger"></span>*@
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.Email" class=" fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.Email" class="form-control form-control-solid">
+                                @*<span asp-validation-for="Description" class="text-danger"></span>*@
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="address ">
-                    Address
-                    <hr />
-                    <div class="custom-style-area" style="margin-left: 2rem !important;">
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.Street" class=" fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.Street" class="form-control form-control-solid">
-                            @*<span asp-validation-for="Street" class="text-danger"></span>*@
+                    <div class="category category-sec">
+                        <div class="category-title">
+                            <a class="category-anchor" name="Address" style="opacity: 1;">Address</a>
                         </div>
+                        <div class="custom-style-area" style="margin-left: 2rem !important;">
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.Street" class=" fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.Street" class="form-control form-control-solid">
+                                @*<span asp-validation-for="Street" class="text-danger"></span>*@
+                            </div>
 
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.City" class=" fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.City" class="form-control form-control-solid">
-                            @*<span asp-validation-for="City" class="text-danger"></span>*@
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.City" class=" fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.City" class="form-control form-control-solid">
+                                @*<span asp-validation-for="City" class="text-danger"></span>*@
+                            </div>
+
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.State" class=" fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.State" class="form-control form-control-solid">
+                                @*<span asp-validation-for="State" class="text-danger"></span>*@
+                            </div>
+
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.ZipCode" class=" fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.ZipCode" class="form-control form-control-solid">
+                                @*<span asp-validation-for="ZipCode" class="text-danger"></span>*@
+                            </div>
+
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.Phone" class=" fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.Phone" class="form-control form-control-solid">
+                                @*<span asp-validation-for="Phone" class="text-danger"></span>*@
+                            </div>
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.InsertDate" class=" fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.InsertDate" class="form-control form-control-solid">
+                                @*<span asp-validation-for="InsertDate" class="text-danger"></span>*@
+                            </div>
+                            <div class="fv-row mb-3 fv-plugins-icon-container">
+                                <label asp-for="Customer.UpdateDate" class=" fs-6 fw-semibold mb-2"></label>
+                                <input asp-for="Customer.UpdateDate" class="form-control form-control-solid">
+                                <span asp-validation-for="Customer.UpdateDate" class="text-danger"></span>
+                            </div>
                         </div>
-
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.State" class=" fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.State" class="form-control form-control-solid">
-                            @*<span asp-validation-for="State" class="text-danger"></span>*@
-                        </div>
-
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.ZipCode" class=" fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.ZipCode" class="form-control form-control-solid">
-                            @*<span asp-validation-for="ZipCode" class="text-danger"></span>*@
-                        </div>
-
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.Phone" class=" fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.Phone" class="form-control form-control-solid">
-                            @*<span asp-validation-for="Phone" class="text-danger"></span>*@
-                        </div>
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.InsertDate" class=" fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.InsertDate" class="form-control form-control-solid">
-                            @*<span asp-validation-for="InsertDate" class="text-danger"></span>*@
-                        </div>
-
-                        @* <div class="fv-row mb-3 fv-plugins-icon-container">
-                        <label asp-for="InsertUserId" class=" fs-6 fw-semibold mb-2"></label>
-                        <input asp-for="InsertUserId" class="form-control form-control-solid">
-                        <span asp-validation-for="InsertUserId" class="text-danger"></span>
-                        </div>*@
-
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                            <label asp-for="Customer.UpdateDate" class=" fs-6 fw-semibold mb-2"></label>
-                            <input asp-for="Customer.UpdateDate" class="form-control form-control-solid">
-                            <span asp-validation-for="Customer.UpdateDate" class="text-danger"></span>
-                        </div>
-
-                        @* <div class="fv-row mb-3 fv-plugins-icon-container">
-                        <label asp-for="UpdateUserId" class=" fs-6 fw-semibold mb-2"></label>
-                        <input asp-for="UpdateUserId" class="form-control form-control-solid">
-                        <span asp-validation-for="UpdateUserId" class="text-danger"></span>
-                        </div>
-
-                        <div class="fv-row mb-3 fv-plugins-icon-container">
-                        <label asp-for="TenantId" class=" fs-6 fw-semibold mb-2"></label>
-                        <input asp-for="TenantId" class="form-control form-control-solid">
-                        <span asp-validation-for="TenantId" class="text-danger"></span>
-                        </div>*@
                     </div>
                 </div>
                 <div class="form-group modal-footer flex-center">
@@ -119,7 +110,94 @@
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <form asp-action="Create" id="kt_modal_add_customer_contact_form" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.CustomerId" class="control-label"></label>
+                    <select asp-for="CustomerContact.CustomerId" class="form-select form-select-transparent text-graY-800 fs-base lh-1 fw-bold py-0 ps-3 w-auto" data-control="select2" data-hide-search="true" data-dropdown-css-class="w-150px" data-placeholder="Select an option" asp-items="ViewBag.CustomerId"></select>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.Name" class="control-label"></label>
+                    <input asp-for="CustomerContact.Name" required class="form-control" />
+
+                    <span asp-validation-for="CustomerContact.Name" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.Description" class="control-label"></label>
+                    <input asp-for="CustomerContact.Description" class="form-control" />
+                    <span asp-validation-for="CustomerContact.Description" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.Street" class="control-label"></label>
+                    <input asp-for="CustomerContact.Street" class="form-control" />
+                    <span asp-validation-for="CustomerContact.Street" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.City" class="control-label"></label>
+                    <input asp-for="CustomerContact.City" class="form-control" />
+                    <span asp-validation-for="CustomerContact.City" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.State" class="control-label"></label>
+                    <input asp-for="CustomerContact.State" class="form-control" />
+                    <span asp-validation-for="CustomerContact.State" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.ZipCode" class="control-label"></label>
+                    <input asp-for="CustomerContact.ZipCode" class="form-control" />
+                    <span asp-validation-for="CustomerContact.ZipCode" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.Phone" class="control-label"></label>
+                    <input asp-for="CustomerContact.Phone" class="form-control" />
+                    <span asp-validation-for="CustomerContact.Phone" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.Email" class="control-label"></label>
+                    <input asp-for="CustomerContact.Email" class="form-control" />
+                    <span asp-validation-for="CustomerContact.Email" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.InsertDate" class="control-label"></label>
+                    <input asp-for="CustomerContact.InsertDate" class="form-control" />
+                    <span asp-validation-for="CustomerContact.InsertDate" class="text-danger"></span>
+                </div>
+                @*  <div class="fv-row mb-3 fv-plugins-icon-container">
+                <label asp-for="InsertUserId" class="control-label"></label>
+                <input asp-for="InsertUserId" class="form-control" />
+                <span asp-validation-for="InsertUserId" class="text-danger"></span>
+                </div> *@
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                    <label asp-for="CustomerContact.UpdateDate" class="control-label"></label>
+                    <input asp-for="CustomerContact.UpdateDate" class="form-control" />
+                    <span asp-validation-for="CustomerContact.UpdateDate" class="text-danger"></span>
+                </div>
+                @* <div class="fv-row mb-3 fv-plugins-icon-container">
+                <label asp-for="UpdateUserId" class="control-label"></label>
+                <input asp-for="UpdateUserId" class="form-control" />
+                <span asp-validation-for="UpdateUserId" class="text-danger"></span>
+                </div>
+                <div class="fv-row mb-3 fv-plugins-icon-container">
+                <label asp-for="TenantId" class="control-label"></label>
+                <input asp-for="TenantId" class="form-control" />
+                <span asp-validation-for="TenantId" class="text-danger"></span>
+                </div> *@
+                <div class="form-group modal-footer flex-center">
+                    <button type="submit" id="kt_modal_add_customer_contact_submit" class="btn btn-primary">
+                        <span class="indicator-label">Submit</span>
+                        <span class="indicator-progress">
+                            Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                        </span>
+                    </button>
+                    <button type="reset" id="kt_modal_add_customer_contact_cancel" class="btn btn-light me-3">
+                        <a asp-action="Index">Back to List</a>
+                    </button>
+
+                </div>
+            </form>
+        </div>
     </div>
     
 </div>
