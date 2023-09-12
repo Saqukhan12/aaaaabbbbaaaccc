@@ -175,6 +175,7 @@
             type: 'GET',
             url: "/Customers/Edit?id="+id+"&type=_partial",
             success: function (data) {
+                debugger;
                 if (data != null) {
                     $("#kt_tab_2").html(`<span>Contacts</span>`);
                     $("#kt_tab_pane_1").empty();
