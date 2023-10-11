@@ -124,11 +124,7 @@
                             <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="role_list_table">
                                 <thead>
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                        <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 29.8906px;">
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                                <input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_ecommerce_products_table .form-check-input" value="1">
-                                            </div>
-                                        </th>
+                                       
                                         <th class="min-w-100px sorting" tabindex="0" aria-controls="kt_ecommerce_products_table" rowspan="1" colspan="1" aria-label="Product: activate to sort column ascending" style="width: 116.328px;">Name</th>
                                         <th class="text-end min-w-70px sorting" tabindex="0" aria-controls="kt_ecommerce_products_table" rowspan="1" colspan="1" aria-label="Qty: activate to sort column ascending" style="width: 97.7188px;">Total Users</th>
                                         <th class="text-end min-w-70px sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 110.625px;">Actions</th>
@@ -138,11 +134,7 @@
                                     @foreach (var role in Model)
                                     {
                                         <tr class="odd">
-                                            <td>
-                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="checkbox" value="1">
-                                                </div>
-                                            </td>
+                                            
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     @Html.DisplayFor(m => role.RollName)
@@ -154,8 +146,8 @@
                                                 </span>
                                             </td>
                                             <td class="text-end">
-                                                <a asp-action="Edit" asp-route-id="@role.ApplicationRoleId" class="btn btn-icon btn-warning btn-active-light-primary w-30px h-30px me-3">
-                                                    <i class="ki-duotone ki-add-item fs-3">
+                                                <a asp-action="Edit" asp-route-id="@role.ApplicationRoleId" class="btn btn-icon  btn-active-light-primary w-30px h-30px me-3">
+                                                    <i class="ki-duotone ki-message-edit fs-3">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
                                                         <span class="path3"></span>
@@ -178,102 +170,6 @@
     </div>
     <!--end::Content-->
 </div>
-<script>
-
-    "use strict";
-
-    // Class definition
-    var KTDatatablesServerSide = function () {
-        // Shared variables
-        var table;
-        var dt;
-        var filterPayment;
-
-        // Private functions
-        var initDatatable = function () {
-            dt = $("#role_list_table").DataTable({
-                searchDelay: 500,
-                processing: true,
-                //serverSide: true,
-                //order: [[5, 'desc']],
-                stateSave: true,
-                //select: {
-                //    style: 'multi',
-                //    selector: 'td:first-child input[type="checkbox"]',
-                //    className: 'row-selected'
-                //},
-
-
-                // Add data-filter attribute
-                //createdRow: function (row, data, dataIndex) {
-                //    $(row).find('td:eq(4)').attr('data-filter', data.CreditCardType);
-                //}
-            });
-
-            table = dt.$;
-
-            // Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
-            dt.on('draw', function () {
-                initToggleToolbar();
-                toggleToolbars();
-                handleDeleteRows();
-                KTMenu.createInstances();
-            });
-        }
-
-        // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
-        var handleSearchDatatable = function () {
-            const filterSearch = document.querySelector('[data-kt-docs-table-filter="search"]');
-            filterSearch.addEventListener('keyup', function (e) {
-                dt.search(e.target.value).draw();
-            });
-        }
-
-        // Filter Datatable
-        var handleFilterDatatable = () => {
-            // Select filter options
-            filterPayment = document.querySelectorAll('[data-kt-docs-table-filter="payment_type"] [name="payment_type"]');
-            const filterButton = document.querySelector('[data-kt-docs-table-filter="filter"]');
-
-            // Filter datatable on submit
-            filterButton.addEventListener('click', function () {
-                // Get filter values
-                let paymentValue = '';
-
-                // Get payment value
-                filterPayment.forEach(r => {
-                    if (r.checked) {
-                        paymentValue = r.value;
-                    }
-
-                    // Reset payment value if "All" is selected
-                    if (paymentValue === 'all') {
-                        paymentValue = '';
-                    }
-                });
-
-                // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
-                dt.search(paymentValue).draw();
-            });
-        }
-        // Public methods
-        return {
-            init: function () {
-                initDatatable();
-                handleSearchDatatable();
-                //initToggleToolbar();
-                handleFilterDatatable();
-                //handleDeleteRows();
-                //handleResetForm();
-            }
-        }
-    }();
-
-    // On document ready
-    KTUtil.onDOMContentLoaded(function () {
-        KTDatatablesServerSide.init();
-    });
-</script>
 
 
 

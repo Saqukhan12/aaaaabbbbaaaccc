@@ -34,6 +34,7 @@
 	  <!--Development Files can be removed for deployment -->
 	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.9" />
+	  <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.5" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\baseFile\" />

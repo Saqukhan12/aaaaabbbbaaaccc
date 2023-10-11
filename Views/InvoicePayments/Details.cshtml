@@ -1,18 +1,21 @@
-﻿@model DotNetCoreBoilerplate.Models.Customer
+﻿@model DotNetCoreBoilerplate.Models.InvoicePayment
 
 @{
     ViewData["Title"] = "Details";
-    // Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1>Details</h1>
+
 <div>
-   
+    <h4>InvoicePayment</h4>
+    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Number)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.Number)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
@@ -21,40 +24,28 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Street)
+            @Html.DisplayNameFor(model => model.SalesGroup)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Street)
+            @Html.DisplayFor(model => model.SalesGroup)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.City)
+            @Html.DisplayNameFor(model => model.PaymentDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.City)
+            @Html.DisplayFor(model => model.PaymentDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.State)
+            @Html.DisplayNameFor(model => model.InvoiceAmount)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.State)
+            @Html.DisplayFor(model => model.InvoiceAmount)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ZipCode)
+            @Html.DisplayNameFor(model => model.PaymentAmount)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ZipCode)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
+            @Html.DisplayFor(model => model.PaymentAmount)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.InsertDate)
@@ -62,19 +53,18 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.InsertDate)
         </dd>
-        @* <dt class = "col-sm-2">
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.InsertUserId)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.InsertUserId)
-        </dd> *@
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.UpdateDate)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UpdateDate)
         </dd>
-        @* 
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.UpdateUserId)
         </dt>
@@ -86,7 +76,19 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TenantId)
-        </dd> *@
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CashBank)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CashBank.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Invoice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Invoice.Id)
+        </dd>
     </dl>
 </div>
 <div>
