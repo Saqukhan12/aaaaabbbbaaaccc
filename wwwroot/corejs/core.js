@@ -115,6 +115,23 @@ function CustomerDetail(Id) {
         }
     });
 }
+function AddSalesChannel() {
+    alert("test");
+    $.ajax({
+        type: 'GET',
+        url: "/SaleChannels/Create?type=_partial",
+        success: function (data) {
+            if (data != null) {
+
+                $("#kt_modal_generic_scroll").empty();
+                $("#kt_modal_generic_scroll").html(data);
+            }
+            $("#kt_modal_generic").modal();
+            $("#kt_modal_generic_header").html(`<h4>New Customer</h4>`);
+            //$("#kt_modal_add_customer").addClass("show");
+        }
+    });
+}
 function AddTenants() {
     $.ajax({
         type: 'GET',

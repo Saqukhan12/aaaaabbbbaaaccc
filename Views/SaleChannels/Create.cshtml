@@ -2,13 +2,9 @@
 
 @{
     ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>SalesChannel</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -28,17 +24,17 @@
                 <input asp-for="InsertDate" class="form-control" />
                 <span asp-validation-for="InsertDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="InsertUserId" class="control-label"></label>
                 <input asp-for="InsertUserId" class="form-control" />
                 <span asp-validation-for="InsertUserId" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <label asp-for="UpdateDate" class="control-label"></label>
                 <input asp-for="UpdateDate" class="form-control" />
                 <span asp-validation-for="UpdateDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="UpdateUserId" class="control-label"></label>
                 <input asp-for="UpdateUserId" class="form-control" />
                 <span asp-validation-for="UpdateUserId" class="text-danger"></span>
@@ -47,7 +43,7 @@
                 <label asp-for="TenantId" class="control-label"></label>
                 <input asp-for="TenantId" class="form-control" />
                 <span asp-validation-for="TenantId" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
